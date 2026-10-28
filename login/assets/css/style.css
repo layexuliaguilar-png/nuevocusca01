@@ -1,0 +1,929 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #eff2f6;
+  --primary-navy: #003865;
+  --accent-yellow: #fdbb06;
+  --input-bg: #e8edf3;
+  --input-border: #d4dde6;
+  --placeholder-color: #6d7f92;
+  --btn-disabled-bg: #dedede;
+  --btn-disabled-text: #96a1ab;
+  --btn-active-bg: #003865;
+  --btn-active-text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--primary-navy);
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ========================================================
+   TOP HEADER NAVBAR
+   ======================================================== */
+.top-nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5ebf2;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  user-select: none;
+}
+
+.brand-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo-img {
+  height: 44px;
+  max-height: 48px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  letter-spacing: -0.2px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.btn-menu-hamburger {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #eaf0f6;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-navy);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-menu-hamburger:hover {
+  background-color: #dce6f2;
+}
+
+.btn-menu-hamburger svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--primary-navy);
+}
+
+/* Master Container */
+.viewport-container {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(100px, 16vh, 160px);
+  overflow: hidden;
+}
+
+/* ========================================================
+   CENTER LOGIN FORM CONTAINER (Exact Replica)
+   ======================================================== */
+.login-center-wrapper {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  padding: 0 15px;
+}
+
+/* Greeting Header */
+.header-greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.header-greeting h1 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  letter-spacing: -0.3px;
+}
+
+.header-greeting .cloud-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-navy);
+  stroke: var(--primary-navy);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Form Styles */
+.form-box {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  height: 46px;
+  padding: 0 14px;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.input-container:focus-within {
+  background-color: #ffffff;
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 3px rgba(0, 56, 101, 0.1);
+}
+
+.input-icon-left {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.input-icon-left svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--primary-navy);
+  stroke-width: 1.8;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.92rem;
+  color: var(--primary-navy);
+  font-weight: 500;
+}
+
+.form-input::placeholder {
+  color: var(--placeholder-color);
+  font-weight: 400;
+  font-size: 0.88rem;
+}
+
+/* Toggle Password Visibility */
+.btn-toggle-eye {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  color: var(--primary-navy);
+}
+
+.btn-toggle-eye svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--primary-navy);
+  stroke-width: 1.8;
+}
+
+/* Remember Me Checkbox */
+.remember-row {
+  display: flex;
+  align-items: center;
+  margin: 16px 0 20px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.86rem;
+  color: #53677a;
+  font-weight: 500;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.custom-box {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #8c9fae;
+  border-radius: 3px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.checkbox-label input:checked + .custom-box {
+  background-color: var(--primary-navy);
+  border-color: var(--primary-navy);
+}
+
+.custom-box svg {
+  display: none;
+  width: 11px;
+  height: 11px;
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.checkbox-label input:checked + .custom-box svg {
+  display: block;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  height: 46px;
+  background-color: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.1s;
+  margin-bottom: 20px;
+}
+
+.btn-submit:disabled {
+  cursor: not-allowed;
+}
+
+.btn-submit.active,
+.btn-submit:not(:disabled):hover {
+  background-color: var(--btn-active-bg);
+  color: var(--btn-active-text);
+  box-shadow: 0 4px 12px rgba(0, 56, 101, 0.2);
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* Recover Link */
+.recover-wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+.recover-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.recover-link:hover {
+  text-decoration: underline;
+}
+
+.recover-link svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--primary-navy);
+  stroke-width: 2.2;
+}
+
+/* Alert Notification */
+.alert-box {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.84rem;
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+  text-align: center;
+}
+
+/* ========================================================
+   FLOATING ELEMENTS (Pixel-Accurate Positioning & Shapes)
+   ======================================================== */
+.floating-item {
+  position: absolute;
+  user-select: none;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+/* 1. TOP-LEFT: Yellow Heart Circle */
+.item-top-left-heart {
+  top: 10%;
+  left: 20%;
+  width: 48px;
+  height: 48px;
+  background-color: var(--accent-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(253, 187, 6, 0.35);
+  animation: floatAnim1 5s ease-in-out infinite alternate;
+}
+
+.item-top-left-heart svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary-navy);
+  stroke-width: 2.2;
+  fill: none;
+}
+
+/* 2. LEFT: Male Avatar Card with 2 horizontal placeholder lines */
+.item-left-card {
+  top: 26%;
+  left: 0;
+  background: #ffffff;
+  padding: 10px 24px 10px 14px;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  animation: floatAnim2 6s ease-in-out infinite alternate;
+}
+
+.avatar-img-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #f6d860;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-line {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.card-line.line-top {
+  width: 68px;
+}
+
+.card-line.line-bottom {
+  width: 38px;
+}
+
+/* 3. BOTTOM-LEFT: Floating White Squircle with Cash/Transfer Icon */
+.item-bottom-left-icon {
+  top: 55%;
+  left: 10%;
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  animation: floatAnim3 5.5s ease-in-out infinite alternate;
+}
+
+.item-bottom-left-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary-navy);
+  stroke-width: 1.8;
+}
+
+/* 4. TOP-RIGHT: Female Avatar Card with 2 lines */
+.item-top-right-card {
+  top: 9%;
+  right: 0;
+  background: #ffffff;
+  padding: 12px 18px 12px 22px;
+  border-radius: 16px 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  animation: floatAnim2 7s ease-in-out infinite alternate;
+}
+
+.item-top-right-card .avatar-img-box {
+  width: 42px;
+  height: 42px;
+  background-color: #fecdd3;
+}
+
+.item-top-right-card .card-line.line-top {
+  width: 78px;
+}
+
+.item-top-right-card .card-line.line-bottom {
+  width: 60px;
+}
+
+/* 5. RIGHT: Floating White Circle with Credit Card Icon */
+.item-right-card-badge {
+  top: 33%;
+  right: 17%;
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  animation: floatAnim1 6.5s ease-in-out infinite alternate;
+}
+
+.item-right-card-badge svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--primary-navy);
+  stroke-width: 1.8;
+}
+
+/* 6. BOTTOM-RIGHT: Yellow Wallet Circle */
+.item-bottom-right-wallet {
+  bottom: 25%;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(253, 187, 6, 0.4);
+  transform: translateX(10px);
+  animation: floatAnim3 6s ease-in-out infinite alternate;
+}
+
+.item-bottom-right-wallet svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--primary-navy);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Animation Keyframes */
+@keyframes floatAnim1 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@keyframes floatAnim2 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-6px); }
+}
+
+@keyframes floatAnim3 {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-7px); }
+}
+
+/* ========================================================
+   IDENTITY & VALIDATION STYLES (Clean minimal style)
+   ======================================================== */
+.identity-card-wrapper {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 10;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.step-heading {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 22px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.step-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #3b5066;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Pill Selectors (Single horizontal row) */
+.pill-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.pill-btn {
+  background-color: #eaf0f6;
+  color: #3b5066;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.79rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  font-family: inherit;
+  white-space: nowrap;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.pill-btn:hover:not(.active) {
+  background-color: #dce6f0;
+}
+
+.pill-btn.active {
+  background-color: #217997;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Outlined Modern Inputs */
+.modern-input-field {
+  width: 100%;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #64748b;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 0.88rem;
+  color: #1a202c;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 22px;
+}
+
+.modern-input-field::placeholder {
+  color: #7b8e9f;
+  font-weight: 400;
+  font-size: 0.86rem;
+}
+
+.modern-input-field:focus {
+  border-color: #217997;
+  box-shadow: 0 0 0 3px rgba(33, 121, 151, 0.15);
+}
+
+/* Secondary Bottom Link (e.g. Salir) */
+.bottom-exit-link {
+  display: block;
+  text-align: center;
+  color: #1f7a9c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 14px;
+  transition: opacity 0.2s;
+}
+
+.bottom-exit-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================
+   TOKEN / OTP 6-DIGIT STYLES
+   ======================================================== */
+.token-inputs-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 24px 0;
+}
+
+.token-digit-input {
+  width: 46px;
+  height: 52px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  background-color: #ffffff;
+  border: 1.5px solid #8c9fae;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  font-family: inherit;
+}
+
+.token-digit-input:focus {
+  border-color: #1f7a9c;
+  box-shadow: 0 0 0 3px rgba(31, 122, 156, 0.18);
+  background-color: #fcfdfe;
+}
+
+.token-digit-input.filled {
+  border-color: #1f7a9c;
+}
+
+.token-helper-text {
+  font-size: 0.92rem;
+  color: var(--primary-navy);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.token-timer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 0 16px 0;
+  color: var(--primary-navy);
+}
+
+.token-stopwatch-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.token-timer-clock {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  letter-spacing: 0.3px;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+}
+
+.token-resend-box {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 0.86rem;
+  color: #53677a;
+}
+
+.token-resend-link {
+  color: #1f7a9c;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.token-resend-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================
+   LOADING SCREEN (Validando Datos)
+   ======================================================== */
+.loading-box-wrapper {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  padding: 20px 15px;
+  margin: 0 auto;
+}
+
+.circular-spinner {
+  width: 62px;
+  height: 62px;
+  border: 4.5px solid #d9e2ec;
+  border-top-color: #003865;
+  border-radius: 50%;
+  animation: spinnerRotate 1s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes spinnerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #003865;
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.loading-desc {
+  font-size: 0.95rem;
+  color: #53677a;
+  line-height: 1.5;
+  max-width: 290px;
+}
+
+/* ========================================================
+   RESPONSIVE & MOBILE RULES
+   ======================================================== */
+@media (max-width: 900px) {
+  .item-top-left-heart { left: 8%; top: 6%; }
+  .item-right-card-badge { right: 8%; }
+  .item-bottom-left-icon { left: 5%; top: 60%; }
+}
+
+@media (max-width: 768px) {
+  #floatingElements,
+  .floating-item {
+    display: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .viewport-container {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: max(85px, 12vh);
+    padding-bottom: 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .identity-card-wrapper {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 440px) {
+  .identity-card-wrapper {
+    padding: 0 12px;
+  }
+  .step-heading {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+  }
+  .step-label {
+    font-size: 0.84rem;
+    margin-bottom: 7px;
+  }
+  .pill-container {
+    gap: 4px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  .pill-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 7px 2px;
+    font-size: 0.72rem;
+    letter-spacing: -0.25px;
+    text-align: center;
+  }
+  .modern-input-field {
+    height: 42px;
+    font-size: 0.86rem;
+    padding: 0 12px;
+    margin-bottom: 15px;
+  }
+  .btn-submit {
+    height: 44px;
+    font-size: 0.92rem;
+  }
+  .token-inputs-container {
+    gap: 6px;
+    margin: 14px 0 20px 0;
+  }
+  .token-digit-input {
+    width: 40px;
+    height: 46px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .identity-card-wrapper {
+    padding: 0 8px;
+  }
+  .pill-container {
+    gap: 3px;
+  }
+  .pill-btn {
+    font-size: 0.66rem;
+    padding: 6px 1px;
+    letter-spacing: -0.3px;
+  }
+  .step-heading {
+    font-size: 1.25rem;
+  }
+  .token-inputs-container {
+    gap: 4px;
+  }
+  .token-digit-input {
+    width: 35px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+}
+

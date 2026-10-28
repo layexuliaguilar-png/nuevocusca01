@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Yellow/Golden Background like original photo -->
+  <circle cx="50" cy="50" r="50" fill="#fdbb06"/>
+  
+  <!-- Red/Orange Shirt -->
+  <path d="M22,92 C26,72 38,68 50,68 C62,68 74,72 78,92 Z" fill="#e74c3c"/>
+  
+  <!-- Neck -->
+  <rect x="44" y="60" width="12" height="14" fill="#fcd5b5"/>
+  <path d="M42,68 Q50,76 58,68" fill="#fcd5b5"/>
+
+  <!-- Hair Back -->
+  <ellipse cx="50" cy="42" rx="20" ry="24" fill="#3a2312"/>
+
+  <!-- Face Skin -->
+  <ellipse cx="50" cy="48" rx="16" ry="19" fill="#fcd5b5"/>
+
+  <!-- Hair Top & Sideburns -->
+  <path d="M33,42 C33,28 42,25 50,25 C58,25 67,28 67,42 C62,34 56,32 50,32 C44,32 38,34 33,42 Z" fill="#3a2312"/>
+
+  <!-- Beard & Mustache -->
+  <path d="M38,48 C38,64 43,69 50,69 C57,69 62,64 62,48 C62,58 57,64 50,64 C43,64 38,58 38,48 Z" fill="#3a2312"/>
+  <path d="M44,55 Q50,58 56,55 Q50,60 44,55 Z" fill="#3a2312"/>
+
+  <!-- Glasses -->
+  <rect x="37" y="42" width="11" height="9" rx="2.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+  <rect x="52" y="42" width="11" height="9" rx="2.5" fill="none" stroke="#1a1a1a" stroke-width="1.8"/>
+  <line x1="48" y1="46" x2="52" y2="46" stroke="#1a1a1a" stroke-width="1.8"/>
+  <line x1="37" y1="45" x2="33" y2="43" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="63" y1="45" x2="67" y2="43" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Eyes & Pupils -->
+  <circle cx="42.5" cy="46.5" r="1.5" fill="#1a1a1a"/>
+  <circle cx="57.5" cy="46.5" r="1.5" fill="#1a1a1a"/>
+
+  <!-- Smile -->
+  <path d="M46,60 Q50,63 54,60" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
